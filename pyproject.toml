@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orthomcl"
+version = "1.0.0"
+authors = [
+	{ name = "Ulrich Dobramysl", email="ulrich.dobramysl@gmail.com" },
+]
+description = "Find VEuPathDB species orthologues via the OrthoMCL database."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+	"requests",
+	"tqdm",
+	"types-tqdm",
+	"platformdirs",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ulido/orthomcl"
+
+[project.scripts]
+orthomcl = "orthomcl.orthomcl:cli"

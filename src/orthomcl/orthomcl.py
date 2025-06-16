@@ -1,0 +1,184 @@
+from __future__ import annotations
+import argparse
+from gzip import GzipFile
+import pathlib
+from typing import NamedTuple
+from collections.abc import Mapping
+
+import requests
+from tqdm.auto import tqdm
+import platformdirs
+
+ORTHOMCL_GROUPS_URL = "https://orthomcl.org/common/downloads/Current_Release/coreGroups_OrthoMCL-CURRENT/GroupsFile.txt.gz"  # noqa: E501
+
+
+class OrthoEntry(NamedTuple):
+    group: str
+    organism: str
+    gene_id: str
+
+
+class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
+    def __init__(self, entries: list[OrthoEntry]):
+        self._entries = entries
+        self._organisms = {
+            entry[1] for entry in self._entries
+        }
+
+    def __getitem__(self, organism: str):
+        return [
+            OrthoEntry(*entry) for entry in self._entries
+            if entry[1] == organism
+        ]
+
+    def __contains__(self, organism: str) -> bool:
+        return organism in self._organisms
+
+    def __iter__(self):
+        return iter(self._organisms)
+
+    def __len__(self):
+        return len(self._organisms)
+
+
+def _download_groups(path: pathlib.Path):
+    r = requests.get(ORTHOMCL_GROUPS_URL, stream=True)
+    total_size = int(r.headers.get("content-length", 0))
+    block_size = 16*1024
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+
+    with (
+        tqdm(
+            desc="Downloading OrthoMCL groups",
+            total=total_size,
+            unit="B",
+            unit_scale=True,
+        ) as progress_bar,
+        path.open("wb") as outfile
+    ):
+        for chunk in r.iter_content(block_size, decode_unicode=False):
+            progress_bar.update(len(chunk))
+            outfile.write(chunk)
+
+
+def _load_groups():
+    path = (
+        pathlib.Path(platformdirs.user_cache_dir()) /
+        "orthomcl/GroupsFile.txt.gz"
+    )
+
+    if not path.is_file():
+        _download_groups(path)
+
+    with GzipFile(path, "rb") as f:
+        for line in f:
+            yield line
+
+
+class _OrthoMCL(Mapping[str, OrthoEntry]):
+    def __init__(self):
+        self._groups: dict[str, list[OrthoEntry]] = {}
+        self._entries: dict[str, OrthoEntry] = {}
+        self._initialised: bool = False
+
+    def _initialise(self):
+        stream = _load_groups()
+
+        for line in stream:
+            self._add_group_from_line(line.decode())
+
+        self._initialised = True
+
+    def _add_group_from_line(self, line: str):
+        name, remainder = line.split(":", maxsplit=1)
+        group: list[OrthoEntry] = [
+            self.entry_from_string(name, entry_string)
+            for entry_string in remainder[1:].split(" ")
+        ]
+        self._add_group(name, group)
+
+    def _add_group(self, name: str, group: list[OrthoEntry]):
+        for entry in group:
+            self._entries[entry[2]] = entry
+        self._groups[name] = group
+
+    @staticmethod
+    def entry_from_string(group: str, string: str):
+        organism, gene_id = string.split("|")
+        return OrthoEntry(group, organism, gene_id)
+
+    def __getitem__(self, gene_id: str):
+        if not self._initialised:
+            self._initialise()
+        try:
+            entry = self._entries[gene_id]
+            return OrthoEntryCollection(self._groups[entry[0]])
+        except KeyError:
+            # If we have no knowledge of the gene, just return an empty list.
+            return OrthoEntryCollection([])
+
+    def __iter__(self):
+        if not self._initialised:
+            self._initialise()
+        return iter(self._entries)
+
+    def __len__(self):
+        if not self._initialised:
+            self._initialise()
+        return len(self._entries)
+
+    def by_group(self, group_name: str):
+        if not self._initialised:
+            self._initialise()
+        return self._groups[group_name]
+
+    def all_organisms(self):
+        if not self._initialised:
+            self._initialise()
+        return list({
+            entry.organism for entry in self._entries.values()
+        })
+OrthoMCL = _OrthoMCL()  # noqa: E305
+
+
+def cli():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Find VEuPathDB gene orthologues via the OrthoMCL database."),
+    )
+    parser.add_argument(
+        "gene_id",
+        nargs="+",
+        type=str,
+        help="The gene IDs for which the OrthoMCL database should be queried.",
+    )
+    parser.add_argument(
+        "--organisms",
+        "-o",
+        type=str,
+        help=(
+            "Only display orthologues from the given (comma-separated) list "
+            "of OrthoMCL organism IDs."
+        ),
+        default=None,
+    )
+
+    args = parser.parse_args()
+
+    if args.organisms is not None:
+        organisms: list[str] = [
+            organism.strip() for organism in args.organisms.split(",")]
+    else:
+        organisms = OrthoMCL.all_organisms()
+
+    for geneid in args.gene_id:
+        orthologs = OrthoMCL[geneid]
+        print(f"{geneid}:")
+        for organism in organisms:
+            if organism in orthologs:
+                geneids = ','.join(
+                    gene.gene_id for gene in orthologs[organism]
+                    if gene.gene_id != geneid
+                )
+                print(f"  {organism}: {geneids}")
