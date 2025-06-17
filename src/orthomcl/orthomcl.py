@@ -93,7 +93,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
     def _add_group_from_line(self, line: str):
         name, remainder = line.split(":", maxsplit=1)
         group: list[OrthoEntry] = [
-            self.entry_from_string(name, entry_string)
+            self._entry_from_string(name, entry_string)
             for entry_string in remainder[1:].split(" ")
         ]
         self._add_group(name, group)
@@ -104,7 +104,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         self._groups[name] = group
 
     @staticmethod
-    def entry_from_string(group: str, string: str):
+    def _entry_from_string(group: str, string: str):
         organism, gene_id = string.split("|")
         return OrthoEntry(group, organism, gene_id)
 
