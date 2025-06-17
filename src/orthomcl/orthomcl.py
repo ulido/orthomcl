@@ -13,12 +13,21 @@ ORTHOMCL_GROUPS_URL = "https://orthomcl.org/common/downloads/Current_Release/cor
 
 
 class OrthoEntry(NamedTuple):
+    """A single entry in the OrthoMCL database.
+
+    Has three attributes:
+     - `group`: The OrthoMCL group name this entry belongs to.
+     - `organism`: The entry's / gene's organism.
+     - `gene_id`: The entry's / gene's ID name.
+    """
     group: str
     organism: str
     gene_id: str
 
 
 class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
+    """Collection of OrthoMCL database entries, queryable by organism.
+    """
     def __init__(self, entries: list[OrthoEntry]):
         self._entries = entries
         self._organisms = {
@@ -42,6 +51,9 @@ class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
 
 
 def _download_groups(path: pathlib.Path):
+    """Downloads the OrthoMCL database's current release and stores it in
+    `path`.
+    """
     r = requests.get(ORTHOMCL_GROUPS_URL, stream=True)
     total_size = int(r.headers.get("content-length", 0))
     block_size = 16*1024
@@ -63,6 +75,7 @@ def _download_groups(path: pathlib.Path):
 
 
 def _load_groups():
+    """Loads the cached OrthoMCL database. If it doesn't exist, downloads it"""
     path = (
         pathlib.Path(platformdirs.user_cache_dir()) /
         "orthomcl/GroupsFile.txt.gz"
@@ -77,6 +90,25 @@ def _load_groups():
 
 
 class _OrthoMCL(Mapping[str, OrthoEntry]):
+    """Queryable OrthoMCL database.
+
+    Querying the database uses a simple key-value interface. This illustrative
+    example queries OrthoMCL for the Trypanosoma brucei orthologs of the
+    Leishmania mexicana PF16 gene (ID LmxM.20.1400):
+    ```python-repl
+    >>> gene_id = "LmxM.20.1400"
+    >>> results = OrthoMCL[gene_id]
+    >>> results["tbre"]
+    [OrthoEntry(group='OG7_0009222', organism='tbre', gene_id='Tb427_010020200')]
+    ```
+
+    The database can also be queried by OrthoMCL group name:
+    ```python-repl
+    >>> results = OrthoMCL.by_group("OG7_0009222")
+    >>> results["lmex"]
+    [OrthoEntry(group='OG7_0009222', organism='lmex', gene_id='LmxM.20.1400')]
+    ```
+    """
     def __init__(self):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
