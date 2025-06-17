@@ -131,7 +131,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
     def by_group(self, group_name: str):
         if not self._initialised:
             self._initialise()
-        return self._groups[group_name]
+        return OrthoEntryCollection(self._groups[group_name])
 
     def all_organisms(self):
         if not self._initialised:
