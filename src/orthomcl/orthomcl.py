@@ -9,7 +9,15 @@ import requests
 from tqdm.auto import tqdm
 import platformdirs
 
-ORTHOMCL_GROUPS_URL = "https://orthomcl.org/common/downloads/Current_Release/coreGroups_OrthoMCL-CURRENT/GroupsFile.txt.gz"  # noqa: E501
+ORTHOMCL_ROOT_URL = "https://orthomcl.org/common/downloads/Current_Release/"
+ORTHOMCL_GROUPS_URL = (
+    ORTHOMCL_ROOT_URL +
+    "coreGroups_OrthoMCL-CURRENT/GroupsFile.txt.gz"
+)
+ORTHOMCL_DEFLINES_URL = (
+    ORTHOMCL_ROOT_URL +
+    "deflines_OrthoMCL-7.txt.gz"
+)
 
 
 class OrthoEntry(NamedTuple):
@@ -19,10 +27,12 @@ class OrthoEntry(NamedTuple):
      - `group`: The OrthoMCL group name this entry belongs to.
      - `organism`: The entry's / gene's organism.
      - `gene_id`: The entry's / gene's ID name.
+     - `description`: The entry's /gene's description.
     """
     group: str
     organism: str
     gene_id: str
+    description: str
 
 
 class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
@@ -50,11 +60,10 @@ class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
         return len(self._organisms)
 
 
-def _download_groups(path: pathlib.Path):
-    """Downloads the OrthoMCL database's current release and stores it in
-    `path`.
+def _download_file(url: str, path: pathlib.Path):
+    """Downloads file from `url` and stores it at `path`.
     """
-    r = requests.get(ORTHOMCL_GROUPS_URL, stream=True)
+    r = requests.get(url, stream=True)
     total_size = int(r.headers.get("content-length", 0))
     block_size = 16*1024
 
@@ -62,7 +71,7 @@ def _download_groups(path: pathlib.Path):
 
     with (
         tqdm(
-            desc="Downloading OrthoMCL groups",
+            desc=f"Downloading {path.stem}",
             total=total_size,
             unit="B",
             unit_scale=True,
@@ -74,19 +83,46 @@ def _download_groups(path: pathlib.Path):
             outfile.write(chunk)
 
 
-def _load_groups():
-    """Loads the cached OrthoMCL database. If it doesn't exist, downloads it"""
+def _download_groups(path: pathlib.Path):
+    """Downloads the OrthoMCL database's current release and stores it in
+    `path`.
+    """
+    _download_file(ORTHOMCL_GROUPS_URL, path)
+
+
+def _download_deflines(path: pathlib.Path):
+    """Downloads the OrthoMCL database's current deflines and stores it in
+    `path`.
+    """
+    _download_file(ORTHOMCL_DEFLINES_URL, path)
+
+
+def _load_gzipped_file(url: str, rel_path: str):
+    """Loads or downloads a cached file and presents it as a line Generator."""
     path = (
         pathlib.Path(platformdirs.user_cache_dir()) /
-        "orthomcl/GroupsFile.txt.gz"
+        rel_path
     )
 
     if not path.is_file():
-        _download_groups(path)
+        _download_file(url, path)
 
     with GzipFile(path, "rb") as f:
         for line in f:
             yield line
+
+
+def _load_groups():
+    """Loads the cached OrthoMCL database. If it doesn't exist, downloads it"""
+    return _load_gzipped_file(
+        ORTHOMCL_GROUPS_URL, "orthomcl/GroupsFile.txt.gz")
+
+
+def _load_deflines():
+    """Loads the cached OrthoMCL deflines file. If it doesn't exist,
+    downloads it"""
+    return _load_gzipped_file(
+        ORTHOMCL_DEFLINES_URL, "orthomcl/deflines.txt.gz")
 
 
 class _OrthoMCL(Mapping[str, OrthoEntry]):
@@ -112,11 +148,17 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
     def __init__(self):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
+        self._descriptions: dict[str, str] = {}
         self._initialised: bool = False
 
     def _initialise(self):
-        stream = _load_groups()
+        stream = _load_deflines()
+        for line in stream:
+            org_geneid, _, rest = line.split(maxsplit=2)
+            description = rest[::-1].split(maxsplit=1)[1][::-1]
+            self._descriptions[org_geneid[1:].decode()] = description.decode()
 
+        stream = _load_groups()
         for line in stream:
             self._add_group_from_line(line.decode())
 
@@ -126,7 +168,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         name, remainder = line.split(":", maxsplit=1)
         group: list[OrthoEntry] = [
             self._entry_from_string(name, entry_string)
-            for entry_string in remainder[1:].split(" ")
+            for entry_string in remainder[1:-1].split(" ")
         ]
         self._add_group(name, group)
 
@@ -135,10 +177,10 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
             self._entries[entry[2]] = entry
         self._groups[name] = group
 
-    @staticmethod
-    def _entry_from_string(group: str, string: str):
+    def _entry_from_string(self, group: str, string: str):
         organism, gene_id = string.split("|")
-        return OrthoEntry(group, organism, gene_id)
+        description = self._descriptions[string]
+        return OrthoEntry(group, organism, gene_id, description)
 
     def __getitem__(self, gene_id: str):
         if not self._initialised:
