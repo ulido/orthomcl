@@ -207,6 +207,9 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
             self._initialise()
         return OrthoEntryCollection(self._groups[group_name])
 
+    def get_entry(self, gene_id: str):
+        return self._entries[gene_id]
+
     def all_organisms(self):
         if not self._initialised:
             self._initialise()
