@@ -30,7 +30,10 @@ class OrthoOrganism(NamedTuple):
 
 class OrthoOrganismCollection(Mapping[str, OrthoOrganism]):
     def __init__(self):
-        with (pathlib.Path(__file__).parent / "organisms.json").open("r") as f:
+        with (
+            pathlib.Path(__file__).parent /
+            "__assets__/organisms.json"
+        ).open("r") as f:
             organisms = json.load(f)
         self._entries = {
             abbreviation: OrthoOrganism(
