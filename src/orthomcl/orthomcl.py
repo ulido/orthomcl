@@ -1,6 +1,7 @@
 from __future__ import annotations
 import argparse
 from gzip import GzipFile
+import json
 import pathlib
 from typing import NamedTuple
 from collections.abc import Mapping
@@ -18,6 +19,36 @@ ORTHOMCL_DEFLINES_URL = (
     ORTHOMCL_ROOT_URL +
     "deflines_OrthoMCL-7.txt.gz"
 )
+
+
+class OrthoOrganism(NamedTuple):
+    """Organism properties"""
+    abbreviation: str
+    name: str
+    ncbi_taxon_id: int
+
+
+class OrthoOrganismCollection(Mapping[str, OrthoOrganism]):
+    def __init__(self):
+        with (pathlib.Path(__file__).parent / "organisms.json").open("r") as f:
+            organisms = json.load(f)
+        self._entries = {
+            abbreviation: OrthoOrganism(
+                abbreviation,
+                entry["name"],
+                int(entry["ncbi_taxon_id"]),
+            )
+            for abbreviation, entry in organisms.items()
+        }
+
+    def __getitem__(self, abbreviation: str):
+        return self._entries[abbreviation]
+
+    def __iter__(self):
+        return iter(self._entries)
+
+    def __len__(self):
+        return len(self._entries)
 
 
 class OrthoEntry(NamedTuple):
@@ -149,6 +180,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
         self._descriptions: dict[str, str] = {}
+        self._organisms = OrthoOrganismCollection()
         self._initialised: bool = False
 
     def _initialise(self):
@@ -218,6 +250,9 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         return list({
             entry.organism for entry in self._entries.values()
         })
+
+    def get_organism_info(self, organism: str):
+        return self._organisms[organism]
 OrthoMCL = _OrthoMCL()  # noqa: E305
 
 
