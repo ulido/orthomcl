@@ -1,0 +1,1722 @@
+{
+  "bbov":{
+    "name":"Babesia bovis T2Bo",
+    "ncbi_taxon_id":484906
+  },
+  "bmic":{
+    "name":"Babesia microti strain RI",
+    "ncbi_taxon_id":1133968
+  },
+  "cvel":{
+    "name":"Chromera velia CCMP2878",
+    "ncbi_taxon_id":1169474
+  },
+  "chom":{
+    "name":"Cryptosporidium hominis TU502",
+    "ncbi_taxon_id":353151
+  },
+  "cmur":{
+    "name":"Cryptosporidium muris RN66",
+    "ncbi_taxon_id":441375
+  },
+  "cpar":{
+    "name":"Cryptosporidium parvum Iowa II",
+    "ncbi_taxon_id":353152
+  },
+  "ccnf":{
+    "name":"Cyclospora cayetanensis isolate NF1_C8",
+    "ncbi_taxon_id":1813461
+  },
+  "eace":{
+    "name":"Eimeria acervulina Houghton",
+    "ncbi_taxon_id":2557866
+  },
+  "efal":{
+    "name":"Eimeria falciformis Bayer Haberkorn 1970",
+    "ncbi_taxon_id":1421051
+  },
+  "emit":{
+    "name":"Eimeria mitis Houghton",
+    "ncbi_taxon_id":1743103
+  },
+  "eten":{
+    "name":"Eimeria tenella strain Houghton",
+    "ncbi_taxon_id":413949
+  },
+  "ncan":{
+    "name":"Neospora caninum Liverpool",
+    "ncbi_taxon_id":572307
+  },
+  "ptet":{
+    "name":"Paramecium tetraurelia",
+    "ncbi_taxon_id":5888
+  },
+  "pber":{
+    "name":"Plasmodium berghei ANKA",
+    "ncbi_taxon_id":5823
+  },
+  "pcha":{
+    "name":"Plasmodium chabaudi chabaudi",
+    "ncbi_taxon_id":31271
+  },
+  "pcyn":{
+    "name":"Plasmodium cynomolgi strain B",
+    "ncbi_taxon_id":1120755
+  },
+  "pcym":{
+    "name":"Plasmodium cynomolgi strain M",
+    "ncbi_taxon_id":1274352
+  },
+  "pfal":{
+    "name":"Plasmodium falciparum 3D7",
+    "ncbi_taxon_id":36329
+  },
+  "pfag":{
+    "name":"Plasmodium falciparum 7G8",
+    "ncbi_taxon_id":57266
+  },
+  "pfad":{
+    "name":"Plasmodium falciparum Dd2",
+    "ncbi_taxon_id":57267
+  },
+  "pfhb":{
+    "name":"Plasmodium falciparum HB3",
+    "ncbi_taxon_id":137071
+  },
+  "pfnf":{
+    "name":"Plasmodium falciparum NF54",
+    "ncbi_taxon_id":5843
+  },
+  "pinu":{
+    "name":"Plasmodium inui San Antonio 1",
+    "ncbi_taxon_id":1237626
+  },
+  "pkno":{
+    "name":"Plasmodium knowlesi strain H",
+    "ncbi_taxon_id":5851
+  },
+  "pviv":{
+    "name":"Plasmodium vivax Sal-1",
+    "ncbi_taxon_id":126793
+  },
+  "pyxn":{
+    "name":"Plasmodium yoelii yoelii 17XNL",
+    "ncbi_taxon_id":352914
+  },
+  "pcga":{
+    "name":"Porospora cf. gigantea A",
+    "ncbi_taxon_id":2853593
+  },
+  "pcgb":{
+    "name":"Porospora cf. gigantea B",
+    "ncbi_taxon_id":2853592
+  },
+  "tetr":{
+    "name":"Tetrahymena thermophila",
+    "ncbi_taxon_id":5911
+  },
+  "tann":{
+    "name":"Theileria annulata strain Ankara",
+    "ncbi_taxon_id":353154
+  },
+  "tequ":{
+    "name":"Theileria equi strain WA",
+    "ncbi_taxon_id":1537102
+  },
+  "tori":{
+    "name":"Theileria orientalis strain Shintoku",
+    "ncbi_taxon_id":869250
+  },
+  "tpar":{
+    "name":"Theileria parva strain Muguga",
+    "ncbi_taxon_id":333668
+  },
+  "tgar":{
+    "name":"Toxoplasma gondii ARI",
+    "ncbi_taxon_id":1074872
+  },
+  "tgca":{
+    "name":"Toxoplasma gondii CAST",
+    "ncbi_taxon_id":943122
+  },
+  "tgco":{
+    "name":"Toxoplasma gondii COUG",
+    "ncbi_taxon_id":1074873
+  },
+  "tgfo":{
+    "name":"Toxoplasma gondii FOU",
+    "ncbi_taxon_id":943167
+  },
+  "tggd":{
+    "name":"Toxoplasma gondii GAB2-2007-GAL-DOM2",
+    "ncbi_taxon_id":1130820
+  },
+  "tggt":{
+    "name":"Toxoplasma gondii GT1",
+    "ncbi_taxon_id":507601
+  },
+  "tgma":{
+    "name":"Toxoplasma gondii MAS",
+    "ncbi_taxon_id":943118
+  },
+  "tgon":{
+    "name":"Toxoplasma gondii ME49",
+    "ncbi_taxon_id":508771
+  },
+  "tgee":{
+    "name":"Toxoplasma gondii RH-88",
+    "ncbi_taxon_id":1208370
+  },
+  "tgru":{
+    "name":"Toxoplasma gondii RUB",
+    "ncbi_taxon_id":935652
+  },
+  "tgta":{
+    "name":"Toxoplasma gondii TgCATBr9",
+    "ncbi_taxon_id":943120
+  },
+  "tgtg":{
+    "name":"Toxoplasma gondii TgCatPRC2",
+    "ncbi_taxon_id":1130821
+  },
+  "tgva":{
+    "name":"Toxoplasma gondii VAND",
+    "ncbi_taxon_id":933077
+  },
+  "tgve":{
+    "name":"Toxoplasma gondii VEG",
+    "ncbi_taxon_id":432359
+  },
+  "tgop":{
+    "name":"Toxoplasma gondii p89",
+    "ncbi_taxon_id":943119
+  },
+  "vbra":{
+    "name":"Vitrella brassicaformis CCMP3155",
+    "ncbi_taxon_id":1169540
+  },
+  "acas":{
+    "name":"Acanthamoeba castellanii str. Neff",
+    "ncbi_taxon_id":1257118
+  },
+  "ddis":{
+    "name":"Dictyostelium discoideum",
+    "ncbi_taxon_id":44689
+  },
+  "ddia":{
+    "name":"Dictyostelium discoideum AX4",
+    "ncbi_taxon_id":352472
+  },
+  "edis":{
+    "name":"Entamoeba dispar SAW760",
+    "ncbi_taxon_id":370354
+  },
+  "ehis":{
+    "name":"Entamoeba histolytica HM-1:IMSS",
+    "ncbi_taxon_id":294381
+  },
+  "ehia":{
+    "name":"Entamoeba histolytica HM-1:IMSS-A",
+    "ncbi_taxon_id":885318
+  },
+  "ehib":{
+    "name":"Entamoeba histolytica HM-1:IMSS-B",
+    "ncbi_taxon_id":885319
+  },
+  "ehhi":{
+    "name":"Entamoeba histolytica HM-3:IMSS",
+    "ncbi_taxon_id":885315
+  },
+  "ehik":{
+    "name":"Entamoeba histolytica KU27",
+    "ncbi_taxon_id":885311
+  },
+  "einv":{
+    "name":"Entamoeba invadens IP1",
+    "ncbi_taxon_id":370355
+  },
+  "enut":{
+    "name":"Entamoeba nuttalli P19",
+    "ncbi_taxon_id":1076696
+  },
+  "ahos":{
+    "name":"Acidianus hospitalis W1",
+    "ncbi_taxon_id":933801
+  },
+  "aful":{
+    "name":"Archaeoglobus fulgidus",
+    "ncbi_taxon_id":2234
+  },
+  "cmaq":{
+    "name":"Caldivirga maquilingensis IC-167",
+    "ncbi_taxon_id":397948
+  },
+  "damy":{
+    "name":"Desulfurococcus amylolyticus",
+    "ncbi_taxon_id":94694
+  },
+  "halo":{
+    "name":"Halobacterium salinarum",
+    "ncbi_taxon_id":2242
+  },
+  "hwal":{
+    "name":"Haloquadratum walsbyi DSM 16790",
+    "ncbi_taxon_id":362976
+  },
+  "hbut":{
+    "name":"Hyperthermus butylicus",
+    "ncbi_taxon_id":54248
+  },
+  "ihos":{
+    "name":"Ignicoccus hospitalis",
+    "ncbi_taxon_id":160233
+  },
+  "ckor":{
+    "name":"Korarchaeum cryptofilum",
+    "ncbi_taxon_id":498846
+  },
+  "msed":{
+    "name":"Metallosphaera sedula",
+    "ncbi_taxon_id":43687
+  },
+  "mjan":{
+    "name":"Methanocaldococcus jannaschii",
+    "ncbi_taxon_id":2190
+  },
+  "mmar":{
+    "name":"Methanococcus maripaludis S2",
+    "ncbi_taxon_id":267377
+  },
+  "mkan":{
+    "name":"Methanopyrus kandleri",
+    "ncbi_taxon_id":2320
+  },
+  "mace":{
+    "name":"Methanosarcina acetivorans",
+    "ncbi_taxon_id":2214
+  },
+  "mthe":{
+    "name":"Methanothermobacter thermautotrophicus",
+    "ncbi_taxon_id":145262
+  },
+  "nequ":{
+    "name":"Nanoarchaeum equitans",
+    "ncbi_taxon_id":160232
+  },
+  "nmar":{
+    "name":"Nitrosopumilus maritimus",
+    "ncbi_taxon_id":338192
+  },
+  "ptor":{
+    "name":"Picrophilus torridus",
+    "ncbi_taxon_id":46632
+  },
+  "paer":{
+    "name":"Pyrobaculum aerophilum",
+    "ncbi_taxon_id":13773
+  },
+  "pocc":{
+    "name":"Pyrodictium occultum",
+    "ncbi_taxon_id":2309
+  },
+  "pfum":{
+    "name":"Pyrolobus fumarii",
+    "ncbi_taxon_id":54252
+  },
+  "smar":{
+    "name":"Staphylothermus marinus",
+    "ncbi_taxon_id":2280
+  },
+  "saci":{
+    "name":"Sulfolobus acidocaldarius",
+    "ncbi_taxon_id":2285
+  },
+  "ssol":{
+    "name":"Sulfolobus solfataricus P2",
+    "ncbi_taxon_id":273057
+  },
+  "tkod":{
+    "name":"Thermococcus kodakarensis",
+    "ncbi_taxon_id":311400
+  },
+  "tpen":{
+    "name":"Thermofilum pendens",
+    "ncbi_taxon_id":2269
+  },
+  "tagg":{
+    "name":"Thermosphaera aggregans",
+    "ncbi_taxon_id":54254
+  },
+  "laet":{
+    "name":"Leishmania aethiopica L147",
+    "ncbi_taxon_id":1206056
+  },
+  "lbrm":{
+    "name":"Leishmania braziliensis MHOM\/BR\/75\/M2903",
+    "ncbi_taxon_id":1295825
+  },
+  "lbra":{
+    "name":"Leishmania braziliensis MHOM\/BR\/75\/M2904",
+    "ncbi_taxon_id":420245
+  },
+  "ldon":{
+    "name":"Leishmania donovani BPK282A1",
+    "ncbi_taxon_id":981087
+  },
+  "linf":{
+    "name":"Leishmania infantum JPCM5",
+    "ncbi_taxon_id":435258
+  },
+  "lmaj":{
+    "name":"Leishmania major strain Friedlin",
+    "ncbi_taxon_id":347515
+  },
+  "lmjl":{
+    "name":"Leishmania major strain LV39c5",
+    "ncbi_taxon_id":860569
+  },
+  "lmjs":{
+    "name":"Leishmania major strain SD 75.1",
+    "ncbi_taxon_id":860570
+  },
+  "lmex":{
+    "name":"Leishmania mexicana MHOM\/GT\/2001\/U1103",
+    "ncbi_taxon_id":929439
+  },
+  "lpan":{
+    "name":"Leishmania panamensis MHOM\/COL\/81\/L13",
+    "ncbi_taxon_id":1295824
+  },
+  "lspm":{
+    "name":"Leishmania sp. MAR LEM2494",
+    "ncbi_taxon_id":1303197
+  },
+  "ltro":{
+    "name":"Leishmania tropica L590",
+    "ncbi_taxon_id":1206058
+  },
+  "tbrt":{
+    "name":"Trypanosoma brucei brucei TREU927",
+    "ncbi_taxon_id":185431
+  },
+  "tbrg":{
+    "name":"Trypanosoma brucei gambiense DAL972",
+    "ncbi_taxon_id":679716
+  },
+  "tcon":{
+    "name":"Trypanosoma congolense IL3000",
+    "ncbi_taxon_id":1068625
+  },
+  "tcrc":{
+    "name":"Trypanosoma cruzi strain CL Brener",
+    "ncbi_taxon_id":353153
+  },
+  "tran":{
+    "name":"Trypanosoma rangeli SC58",
+    "ncbi_taxon_id":429131
+  },
+  "tviv":{
+    "name":"Trypanosoma vivax Y486",
+    "ncbi_taxon_id":1055687
+  },
+  "bant":{
+    "name":"Bacillus anthracis",
+    "ncbi_taxon_id":1392
+  },
+  "cper":{
+    "name":"Clostridium perfringens str. 13",
+    "ncbi_taxon_id":195102
+  },
+  "lmon":{
+    "name":"Listeria monocytogenes EGD-e",
+    "ncbi_taxon_id":169963
+  },
+  "amac":{
+    "name":"Allomyces macrogynus ATCC 38327",
+    "ncbi_taxon_id":578462
+  },
+  "aspw":{
+    "name":"Amphiamblys sp. WSBS2006",
+    "ncbi_taxon_id":1866961
+  },
+  "aalp":{
+    "name":"Anncaliia algerae PRA109",
+    "ncbi_taxon_id":1240240
+  },
+  "aalr":{
+    "name":"Anncaliia algerae PRA339",
+    "ncbi_taxon_id":1288291
+  },
+  "aapi":{
+    "name":"Ascosphaera apis ARSEF 7405",
+    "ncbi_taxon_id":392613
+  },
+  "aacu":{
+    "name":"Aspergillus aculeatus ATCC 16872",
+    "ncbi_taxon_id":690307
+  },
+  "abra":{
+    "name":"Aspergillus brasiliensis CBS 101740",
+    "ncbi_taxon_id":767769
+  },
+  "acam":{
+    "name":"Aspergillus campestris IBT 28561",
+    "ncbi_taxon_id":1392248
+  },
+  "acar":{
+    "name":"Aspergillus carbonarius ITEM 5010",
+    "ncbi_taxon_id":602072
+  },
+  "acla":{
+    "name":"Aspergillus clavatus NRRL 1",
+    "ncbi_taxon_id":344612
+  },
+  "aell":{
+    "name":"Aspergillus ellipticus CBS 707.79",
+    "ncbi_taxon_id":1448320
+  },
+  "aeuc":{
+    "name":"Aspergillus eucalypticola CBS 122712",
+    "ncbi_taxon_id":1448314
+  },
+  "afij":{
+    "name":"Aspergillus fijiensis CBS 313.89",
+    "ncbi_taxon_id":1448319
+  },
+  "afis":{
+    "name":"Aspergillus fischeri NRRL 181",
+    "ncbi_taxon_id":331117
+  },
+  "afla":{
+    "name":"Aspergillus flavus NRRL3357",
+    "ncbi_taxon_id":332952
+  },
+  "afub":{
+    "name":"Aspergillus fumigatus A1163",
+    "ncbi_taxon_id":451804
+  },
+  "afum":{
+    "name":"Aspergillus fumigatus Af293",
+    "ncbi_taxon_id":330879
+  },
+  "agla":{
+    "name":"Aspergillus glaucus CBS 516.65",
+    "ncbi_taxon_id":1160497
+  },
+  "ahet":{
+    "name":"Aspergillus heteromorphus CBS 117.55",
+    "ncbi_taxon_id":1448321
+  },
+  "ahom":{
+    "name":"Aspergillus homomorphus CBS 101889",
+    "ncbi_taxon_id":1450537
+  },
+  "aibe":{
+    "name":"Aspergillus ibericus CBS 121593",
+    "ncbi_taxon_id":1448316
+  },
+  "aluc":{
+    "name":"Aspergillus luchuensis CBS 106.47",
+    "ncbi_taxon_id":1137211
+  },
+  "akaw":{
+    "name":"Aspergillus luchuensis IFO 4308",
+    "ncbi_taxon_id":1033177
+  },
+  "anid":{
+    "name":"Aspergillus nidulans FGSC A4",
+    "ncbi_taxon_id":227321
+  },
+  "anih":{
+    "name":"Aspergillus niger ATCC 1015",
+    "ncbi_taxon_id":380704
+  },
+  "ania":{
+    "name":"Aspergillus niger ATCC 13496",
+    "ncbi_taxon_id":1353008
+  },
+  "anig":{
+    "name":"Aspergillus niger CBS 513.88",
+    "ncbi_taxon_id":425011
+  },
+  "anov":{
+    "name":"Aspergillus novofumigatus IBT 16806",
+    "ncbi_taxon_id":1392255
+  },
+  "aoch":{
+    "name":"Aspergillus ochraceoroseus IBT 24754",
+    "ncbi_taxon_id":1392256
+  },
+  "aory":{
+    "name":"Aspergillus oryzae RIB40",
+    "ncbi_taxon_id":510516
+  },
+  "ascl":{
+    "name":"Aspergillus sclerotiicarbonarius CBS 121057",
+    "ncbi_taxon_id":1448318
+  },
+  "aste":{
+    "name":"Aspergillus steynii IBT 23096",
+    "ncbi_taxon_id":1392250
+  },
+  "asyd":{
+    "name":"Aspergillus sydowii CBS 593.65",
+    "ncbi_taxon_id":1036612
+  },
+  "ater":{
+    "name":"Aspergillus terreus NIH2624",
+    "ncbi_taxon_id":341663
+  },
+  "atub":{
+    "name":"Aspergillus tubingensis CBS 134.48",
+    "ncbi_taxon_id":767770
+  },
+  "auva":{
+    "name":"Aspergillus uvarum CBS 121591",
+    "ncbi_taxon_id":1448315
+  },
+  "aver":{
+    "name":"Aspergillus versicolor CBS 583.65",
+    "ncbi_taxon_id":1036611
+  },
+  "awen":{
+    "name":"Aspergillus wentii DTO 134E9",
+    "ncbi_taxon_id":1073089
+  },
+  "bden":{
+    "name":"Batrachochytrium dendrobatidis JEL423",
+    "ncbi_taxon_id":403673
+  },
+  "bdea":{
+    "name":"Blastomyces dermatitidis ATCC 26199",
+    "ncbi_taxon_id":447095
+  },
+  "bder":{
+    "name":"Blastomyces dermatitidis ER-3",
+    "ncbi_taxon_id":559297
+  },
+  "bgil":{
+    "name":"Blastomyces gilchristii SLH14081",
+    "ncbi_taxon_id":559298
+  },
+  "bgra":{
+    "name":"Blumeria graminis f. sp. tritici 96224",
+    "ncbi_taxon_id":1268274
+  },
+  "bfuc":{
+    "name":"Botrytis cinerea B05.10",
+    "ncbi_taxon_id":332648
+  },
+  "calb":{
+    "name":"Candida albicans SC5314",
+    "ncbi_taxon_id":237561
+  },
+  "calw":{
+    "name":"Candida albicans WO-1",
+    "ncbi_taxon_id":294748
+  },
+  "cdub":{
+    "name":"Candida dubliniensis CD36",
+    "ncbi_taxon_id":573826
+  },
+  "cgla":{
+    "name":"Candida glabrata CBS 138",
+    "ncbi_taxon_id":284593
+  },
+  "cpac":{
+    "name":"Candida parapsilosis CDC317",
+    "ncbi_taxon_id":578454
+  },
+  "ctro":{
+    "name":"Candida tropicalis MYA-3404",
+    "ncbi_taxon_id":294747
+  },
+  "cang":{
+    "name":"Catenaria anguillulae",
+    "ncbi_taxon_id":109876
+  },
+  "cgeo":{
+    "name":"Cenococcum geophilum 1.58",
+    "ncbi_taxon_id":794803
+  },
+  "cglo":{
+    "name":"Chaetomium globosum CBS 148.51",
+    "ncbi_taxon_id":306901
+  },
+  "cspb":{
+    "name":"Chaetothyriales sp. CBS 132003",
+    "ncbi_taxon_id":2249419
+  },
+  "cban":{
+    "name":"Cladophialophora bantiana CBS 173.52",
+    "ncbi_taxon_id":1442370
+  },
+  "cccb":{
+    "name":"Cladophialophora carrionii CBS 160.54",
+    "ncbi_taxon_id":1279043
+  },
+  "cpsa":{
+    "name":"Cladophialophora psammophila CBS 110553",
+    "ncbi_taxon_id":1182543
+  },
+  "cyeg":{
+    "name":"Cladophialophora yegresii CBS 114405",
+    "ncbi_taxon_id":1182544
+  },
+  "cpur":{
+    "name":"Claviceps purpurea 20.1",
+    "ncbi_taxon_id":1111077
+  },
+  "clus":{
+    "name":"Clavispora lusitaniae ATCC 42720",
+    "ncbi_taxon_id":306902
+  },
+  "cimh":{
+    "name":"Coccidioides immitis H538.4",
+    "ncbi_taxon_id":396776
+  },
+  "cimm":{
+    "name":"Coccidioides immitis RS",
+    "ncbi_taxon_id":246410
+  },
+  "cpos":{
+    "name":"Coccidioides posadasii C735 delta SOWgp",
+    "ncbi_taxon_id":222929
+  },
+  "cprm":{
+    "name":"Coccidioides posadasii RMSCC 3488",
+    "ncbi_taxon_id":454284
+  },
+  "cpsi":{
+    "name":"Coccidioides posadasii str. Silveira",
+    "ncbi_taxon_id":443226
+  },
+  "cgra":{
+    "name":"Colletotrichum graminicola M1.001",
+    "ncbi_taxon_id":645133
+  },
+  "chig":{
+    "name":"Colletotrichum higginsianum IMI 349063",
+    "ncbi_taxon_id":759273
+  },
+  "ccor":{
+    "name":"Conidiobolus coronatus",
+    "ncbi_taxon_id":34488
+  },
+  "ccin":{
+    "name":"Coprinopsis cinerea okayama7#130",
+    "ncbi_taxon_id":240176
+  },
+  "cmcm":{
+    "name":"Cordyceps militaris CM01",
+    "ncbi_taxon_id":983644
+  },
+  "cdep":{
+    "name":"Cryptococcus depauperatus CBS 7841",
+    "ncbi_taxon_id":1295531
+  },
+  "cdcb":{
+    "name":"Cryptococcus depauperatus CBS 7855",
+    "ncbi_taxon_id":1295532
+  },
+  "cgac":{
+    "name":"Cryptococcus gattii CA1873",
+    "ncbi_taxon_id":1296111
+  },
+  "cgae":{
+    "name":"Cryptococcus gattii EJB2",
+    "ncbi_taxon_id":1296103
+  },
+  "cgan":{
+    "name":"Cryptococcus gattii NT-10",
+    "ncbi_taxon_id":1296108
+  },
+  "cdeu":{
+    "name":"Cryptococcus gattii VGII R265",
+    "ncbi_taxon_id":294750
+  },
+  "cgai":{
+    "name":"Cryptococcus gattii VGIV IND107",
+    "ncbi_taxon_id":1296105
+  },
+  "cgat":{
+    "name":"Cryptococcus gattii WM276",
+    "ncbi_taxon_id":367775
+  },
+  "cneq":{
+    "name":"Cryptococcus neoformans var. grubii H99",
+    "ncbi_taxon_id":235443
+  },
+  "cnep":{
+    "name":"Cryptococcus neoformans var. neoformans B-3501A",
+    "ncbi_taxon_id":283643
+  },
+  "cneo":{
+    "name":"Cryptococcus neoformans var. neoformans JEC21",
+    "ncbi_taxon_id":214684
+  },
+  "ceur":{
+    "name":"Cyphellophora europaea CBS 101466",
+    "ncbi_taxon_id":1220924
+  },
+  "dhan":{
+    "name":"Debaryomyces hansenii CBS767",
+    "ncbi_taxon_id":284592
+  },
+  "eaed":{
+    "name":"Edhazardia aedis USNM 41457",
+    "ncbi_taxon_id":1003232
+  },
+  "epas":{
+    "name":"Emergomyces pasteurianus Ep9510",
+    "ncbi_taxon_id":1447872
+  },
+  "ecre":{
+    "name":"Emmonsia crescens UAMH 3008",
+    "ncbi_taxon_id":1247875
+  },
+  "ecui":{
+    "name":"Encephalitozoon cuniculi EC1",
+    "ncbi_taxon_id":986730
+  },
+  "ecuc":{
+    "name":"Encephalitozoon cuniculi EC2",
+    "ncbi_taxon_id":989654
+  },
+  "ecuu":{
+    "name":"Encephalitozoon cuniculi EC3",
+    "ncbi_taxon_id":989655
+  },
+  "ecue":{
+    "name":"Encephalitozoon cuniculi EcunIII-L",
+    "ncbi_taxon_id":1355160
+  },
+  "ecun":{
+    "name":"Encephalitozoon cuniculi GB-M1",
+    "ncbi_taxon_id":284813
+  },
+  "ehel":{
+    "name":"Encephalitozoon hellem ATCC 50504",
+    "ncbi_taxon_id":907965
+  },
+  "eint":{
+    "name":"Encephalitozoon intestinalis ATCC 50506",
+    "ncbi_taxon_id":876142
+  },
+  "erom":{
+    "name":"Encephalitozoon romaleae SJ-2008",
+    "ncbi_taxon_id":1178016
+  },
+  "ebie":{
+    "name":"Enterocytozoon bieneusi H348",
+    "ncbi_taxon_id":481877
+  },
+  "eaqu":{
+    "name":"Exophiala aquamarina CBS 119918",
+    "ncbi_taxon_id":1182545
+  },
+  "eder":{
+    "name":"Exophiala dermatitidis NIH\/UT8656",
+    "ncbi_taxon_id":858893
+  },
+  "fmul":{
+    "name":"Fonsecaea multimorphosa CBS 102226",
+    "ncbi_taxon_id":1442371
+  },
+  "fped":{
+    "name":"Fonsecaea pedrosoi CBS 271.37",
+    "ncbi_taxon_id":1442368
+  },
+  "ffuj":{
+    "name":"Fusarium fujikuroi IMI 58289",
+    "ncbi_taxon_id":1279085
+  },
+  "fgra":{
+    "name":"Fusarium graminearum PH-1",
+    "ncbi_taxon_id":229533
+  },
+  "foxc":{
+    "name":"Fusarium odoratissimum NRRL 54006",
+    "ncbi_taxon_id":1089451
+  },
+  "foxf":{
+    "name":"Fusarium oxysporum Fo47",
+    "ncbi_taxon_id":660027
+  },
+  "foxa":{
+    "name":"Fusarium oxysporum NRRL 32931",
+    "ncbi_taxon_id":660029
+  },
+  "focf":{
+    "name":"Fusarium oxysporum f. sp. conglutinans Fo5176",
+    "ncbi_taxon_id":660025
+  },
+  "foxr":{
+    "name":"Fusarium oxysporum f. sp. cubense race 1",
+    "ncbi_taxon_id":1229664
+  },
+  "foxy":{
+    "name":"Fusarium oxysporum f. sp. lycopersici 4287",
+    "ncbi_taxon_id":426428
+  },
+  "foxm":{
+    "name":"Fusarium oxysporum f. sp. melonis 26406",
+    "ncbi_taxon_id":1089452
+  },
+  "fpro":{
+    "name":"Fusarium proliferatum ET1",
+    "ncbi_taxon_id":1227346
+  },
+  "fvan":{
+    "name":"Fusarium vanettenii 77-13-4",
+    "ncbi_taxon_id":660122
+  },
+  "fver":{
+    "name":"Fusarium verticillioides 7600",
+    "ncbi_taxon_id":334819
+  },
+  "gtri":{
+    "name":"Gaeumannomyces tritici R3-111a-1",
+    "ncbi_taxon_id":644352
+  },
+  "acaq":{
+    "name":"Histoplasma capsulatum G186AR",
+    "ncbi_taxon_id":447093
+  },
+  "hcag":{
+    "name":"Histoplasma capsulatum G217B",
+    "ncbi_taxon_id":2902605
+  },
+  "hcap":{
+    "name":"Histoplasma capsulatum H143",
+    "ncbi_taxon_id":544712
+  },
+  "acap":{
+    "name":"Histoplasma capsulatum NAm1",
+    "ncbi_taxon_id":2059318
+  },
+  "hwer":{
+    "name":"Hortaea werneckii EXF-2000",
+    "ncbi_taxon_id":1157616
+  },
+  "klac":{
+    "name":"Kluyveromyces lactis NRRL Y-1140",
+    "ncbi_taxon_id":284590
+  },
+  "kmar":{
+    "name":"Kluyveromyces marxianus DMKU3-1042",
+    "ncbi_taxon_id":1003335
+  },
+  "kbes":{
+    "name":"Kwoniella bestiolae CBS 10118",
+    "ncbi_taxon_id":1296100
+  },
+  "kdej":{
+    "name":"Kwoniella dejecticola CBS 10117",
+    "ncbi_taxon_id":1296121
+  },
+  "khev":{
+    "name":"Kwoniella heveanensis CBS 569",
+    "ncbi_taxon_id":1296119
+  },
+  "kman":{
+    "name":"Kwoniella mangroviensis CBS 8507",
+    "ncbi_taxon_id":1296122
+  },
+  "lbic":{
+    "name":"Laccaria bicolor S238N-H82",
+    "ncbi_taxon_id":486041
+  },
+  "ltig":{
+    "name":"Lentinus tigrinus ALCF2SS1-7",
+    "ncbi_taxon_id":1328758
+  },
+  "lcor":{
+    "name":"Lichtheimia corymbifera JMRC:FSU:9682",
+    "ncbi_taxon_id":1263082
+  },
+  "lelo":{
+    "name":"Lodderomyces elongisporus NRRL YB-4239",
+    "ncbi_taxon_id":379508
+  },
+  "mpha":{
+    "name":"Macrophomina phaseolina MS6",
+    "ncbi_taxon_id":1126212
+  },
+  "mpoa":{
+    "name":"Magnaporthiopsis poae ATCC 64411",
+    "ncbi_taxon_id":644358
+  },
+  "mglo":{
+    "name":"Malassezia globosa CBS 7966",
+    "ncbi_taxon_id":425265
+  },
+  "mrec":{
+    "name":"Malassezia restricta CBS 7877",
+    "ncbi_taxon_id":425264
+  },
+  "msym":{
+    "name":"Malassezia sympodialis ATCC 42132",
+    "ncbi_taxon_id":1230383
+  },
+  "mlar":{
+    "name":"Melampsora larici-populina 98AG31",
+    "ncbi_taxon_id":747676
+  },
+  "mani":{
+    "name":"Metarhizium anisopliae ARSEF 549",
+    "ncbi_taxon_id":1276135
+  },
+  "mgui":{
+    "name":"Meyerozyma guilliermondii ATCC 6260",
+    "ncbi_taxon_id":294746
+  },
+  "mspf":{
+    "name":"Microsporidium sp. FI-F-10",
+    "ncbi_taxon_id":3039483
+  },
+  "mcan":{
+    "name":"Microsporum canis CBS 113480",
+    "ncbi_taxon_id":554155
+  },
+  "mcic":{
+    "name":"Mucor circinelloides 1006PhL",
+    "ncbi_taxon_id":1220926
+  },
+  "mcir":{
+    "name":"Mucor lusitanicus CBS 277.49",
+    "ncbi_taxon_id":747725
+  },
+  "ngyp":{
+    "name":"Nannizzia gypsea CBS 118893",
+    "ncbi_taxon_id":535722
+  },
+  "npar":{
+    "name":"Nematocida parisii ERTm1",
+    "ncbi_taxon_id":881290
+  },
+  "npai":{
+    "name":"Nematocida parisii ERTm3",
+    "ncbi_taxon_id":935791
+  },
+  "ncra":{
+    "name":"Neurospora crassa OR74A",
+    "ncbi_taxon_id":367110
+  },
+  "ndis":{
+    "name":"Neurospora discreta FGSC 8579",
+    "ncbi_taxon_id":510953
+  },
+  "ntet":{
+    "name":"Neurospora tetrasperma FGSC 2508",
+    "ncbi_taxon_id":510951
+  },
+  "nbom":{
+    "name":"Nosema bombycis CQ1",
+    "ncbi_taxon_id":578461
+  },
+  "opic":{
+    "name":"Ophiostoma piceae UAMH 11346",
+    "ncbi_taxon_id":1262450
+  },
+  "ocol":{
+    "name":"Ordospora colligata OC4",
+    "ncbi_taxon_id":1354746
+  },
+  "pbra":{
+    "name":"Paracoccidioides brasiliensis Pb03",
+    "ncbi_taxon_id":482561
+  },
+  "pbrb":{
+    "name":"Paracoccidioides brasiliensis Pb18",
+    "ncbi_taxon_id":502780
+  },
+  "plut":{
+    "name":"Paracoccidioides lutzii Pb01",
+    "ncbi_taxon_id":502779
+  },
+  "pnod":{
+    "name":"Parastagonospora nodorum SN15",
+    "ncbi_taxon_id":321614
+  },
+  "azon":{
+    "name":"Penicilliopsis zonata CBS 506.65",
+    "ncbi_taxon_id":1073090
+  },
+  "pdig":{
+    "name":"Penicillium digitatum Pd1",
+    "ncbi_taxon_id":1170230
+  },
+  "prub":{
+    "name":"Penicillium rubens Wisconsin 54-1255",
+    "ncbi_taxon_id":500485
+  },
+  "pchr":{
+    "name":"Phanerochaete chrysosporium RP-78",
+    "ncbi_taxon_id":273507
+  },
+  "pbla":{
+    "name":"Phycomyces blakesleeanus NRRL 1555(-)",
+    "ncbi_taxon_id":763407
+  },
+  "plin":{
+    "name":"Plenodomus lingam JN3",
+    "ncbi_taxon_id":985895
+  },
+  "posp":{
+    "name":"Pleurotus ostreatus PC15",
+    "ncbi_taxon_id":1137138
+  },
+  "post":{
+    "name":"Pleurotus ostreatus PC9",
+    "ncbi_taxon_id":1137139
+  },
+  "pcar":{
+    "name":"Pneumocystis carinii B80",
+    "ncbi_taxon_id":1408658
+  },
+  "pjru":{
+    "name":"Pneumocystis jirovecii RU7",
+    "ncbi_taxon_id":1408657
+  },
+  "pjir":{
+    "name":"Pneumocystis jirovecii SE8",
+    "ncbi_taxon_id":1209962
+  },
+  "pmur":{
+    "name":"Pneumocystis murina B123",
+    "ncbi_taxon_id":1069680
+  },
+  "pans":{
+    "name":"Podospora anserina S mat+",
+    "ncbi_taxon_id":515849
+  },
+  "pfij":{
+    "name":"Pseudocercospora fijiensis CIRAD86",
+    "ncbi_taxon_id":383855
+  },
+  "pdes":{
+    "name":"Pseudogymnoascus destructans 20631-21",
+    "ncbi_taxon_id":658429
+  },
+  "pgra":{
+    "name":"Puccinia graminis f. sp. tritici CRL 75-36-700-3",
+    "ncbi_taxon_id":418459
+  },
+  "ptri":{
+    "name":"Puccinia triticina 1-1 BBBD Race 1",
+    "ncbi_taxon_id":630390
+  },
+  "pter":{
+    "name":"Pyrenophora teres f. teres 0-1",
+    "ncbi_taxon_id":861557
+  },
+  "mory":{
+    "name":"Pyricularia oryzae 70-15",
+    "ncbi_taxon_id":242507
+  },
+  "pomp":{
+    "name":"Pyronema omphalodes CBS100304",
+    "ncbi_taxon_id":1076935
+  },
+  "rmac":{
+    "name":"Rhinocladiella mackenziei CBS 650.93",
+    "ncbi_taxon_id":1442369
+  },
+  "rhiz":{
+    "name":"Rhizophagus irregularis DAOM 181602=DAOM 197198",
+    "ncbi_taxon_id":747089
+  },
+  "rdel":{
+    "name":"Rhizopus delemar RA 99-880",
+    "ncbi_taxon_id":246409
+  },
+  "rtai":{
+    "name":"Rhodotorula taiwanensis",
+    "ncbi_taxon_id":741276
+  },
+  "rall":{
+    "name":"Rozella allomycis",
+    "ncbi_taxon_id":281847
+  },
+  "ssti":{
+    "name":"Scheffersomyces stipitis CBS 6054",
+    "ncbi_taxon_id":322104
+  },
+  "scoh":{
+    "name":"Schizophyllum commune H4-8",
+    "ncbi_taxon_id":578458
+  },
+  "sjap":{
+    "name":"Schizosaccharomyces japonicus yFS275",
+    "ncbi_taxon_id":402676
+  },
+  "soct":{
+    "name":"Schizosaccharomyces octosporus yFS286",
+    "ncbi_taxon_id":483514
+  },
+  "spom":{
+    "name":"Schizosaccharomyces pombe 972h-",
+    "ncbi_taxon_id":284812
+  },
+  "sscl":{
+    "name":"Sclerotinia sclerotiorum 1980 UF-70",
+    "ncbi_taxon_id":665079
+  },
+  "smac":{
+    "name":"Sordaria macrospora k-hell",
+    "ncbi_taxon_id":771870
+  },
+  "spun":{
+    "name":"Spizellomyces punctatus DAOM BR117",
+    "ncbi_taxon_id":645134
+  },
+  "srei":{
+    "name":"Sporisorium reilianum SRZ2",
+    "ncbi_taxon_id":999809
+  },
+  "sbra":{
+    "name":"Sporothrix brasiliensis 5110",
+    "ncbi_taxon_id":1398154
+  },
+  "ssch":{
+    "name":"Sporothrix schenckii 1099-18",
+    "ncbi_taxon_id":1397361
+  },
+  "slop":{
+    "name":"Spraguea lophii 42_110",
+    "ncbi_taxon_id":1358809
+  },
+  "scha":{
+    "name":"Stachybotrys chartarum IBT 40293",
+    "ncbi_taxon_id":1280524
+  },
+  "tmar":{
+    "name":"Talaromyces marneffei ATCC 18224",
+    "ncbi_taxon_id":441960
+  },
+  "tsti":{
+    "name":"Talaromyces stipitatus ATCC 10500",
+    "ncbi_taxon_id":441959
+  },
+  "tdef":{
+    "name":"Taphrina deformans PYCC 5710",
+    "ncbi_taxon_id":1097556
+  },
+  "thth":{
+    "name":"Thermothelomyces thermophilus ATCC 42464",
+    "ncbi_taxon_id":573729
+  },
+  "tmes":{
+    "name":"Tremella mesenterica DSM 1558",
+    "ncbi_taxon_id":578456
+  },
+  "tree":{
+    "name":"Trichoderma reesei QM6a",
+    "ncbi_taxon_id":431241
+  },
+  "tvir":{
+    "name":"Trichoderma virens Gv29-8",
+    "ncbi_taxon_id":413071
+  },
+  "teqc":{
+    "name":"Trichophyton equinum CBS 127.97",
+    "ncbi_taxon_id":559882
+  },
+  "trbc":{
+    "name":"Trichophyton rubrum CBS 118892",
+    "ncbi_taxon_id":559305
+  },
+  "tton":{
+    "name":"Trichophyton tonsurans CBS 112818",
+    "ncbi_taxon_id":647933
+  },
+  "tasa":{
+    "name":"Trichosporon asahii var. asahii CBS 2479",
+    "ncbi_taxon_id":1186058
+  },
+  "tmel":{
+    "name":"Tuber melanosporum",
+    "ncbi_taxon_id":39416
+  },
+  "uree":{
+    "name":"Uncinocarpus reesii 1704",
+    "ncbi_taxon_id":336963
+  },
+  "umay":{
+    "name":"Ustilago maydis 521",
+    "ncbi_taxon_id":237631
+  },
+  "vcul":{
+    "name":"Vavraia culicis subsp. floridensis",
+    "ncbi_taxon_id":948595
+  },
+  "vdah":{
+    "name":"Verticillium dahliae JR2",
+    "ncbi_taxon_id":1202531
+  },
+  "vcor":{
+    "name":"Vittaforma corneae ATCC 50505",
+    "ncbi_taxon_id":993615
+  },
+  "wmel":{
+    "name":"Wallemia mellicola",
+    "ncbi_taxon_id":1708541
+  },
+  "ylip":{
+    "name":"Yarrowia lipolytica CLIB122",
+    "ncbi_taxon_id":284591
+  },
+  "ztri":{
+    "name":"Zymoseptoria tritici IPO323",
+    "ncbi_taxon_id":336722
+  },
+  "ztrs":{
+    "name":"Zymoseptoria tritici ST99CH_3D1",
+    "ncbi_taxon_id":1276537
+  },
+  "apis":{
+    "name":"Acyrthosiphon pisum",
+    "ncbi_taxon_id":7029
+  },
+  "aalf":{
+    "name":"Aedes albopictus Foshan",
+    "ncbi_taxon_id":101832
+  },
+  "aque":{
+    "name":"Amphimedon queenslandica",
+    "ncbi_taxon_id":400682
+  },
+  "aals":{
+    "name":"Anopheles albimanus STECLA",
+    "ncbi_taxon_id":1943391
+  },
+  "afar":{
+    "name":"Anopheles farauti FAR1",
+    "ncbi_taxon_id":2912840
+  },
+  "aqua":{
+    "name":"Anopheles quadriannulatus SANGWE",
+    "ncbi_taxon_id":45027
+  },
+  "amel":{
+    "name":"Apis mellifera",
+    "ncbi_taxon_id":7460
+  },
+  "bpli":{
+    "name":"Brachionus plicatilis",
+    "ncbi_taxon_id":10195
+  },
+  "bflo":{
+    "name":"Branchiostoma floridae",
+    "ncbi_taxon_id":7739
+  },
+  "cbri":{
+    "name":"Caenorhabditis briggsae AF16",
+    "ncbi_taxon_id":6238
+  },
+  "cele":{
+    "name":"Caenorhabditis elegans",
+    "ncbi_taxon_id":6239
+  },
+  "clup":{
+    "name":"Canis lupus familiaris",
+    "ncbi_taxon_id":9615
+  },
+  "cint":{
+    "name":"Ciona intestinalis",
+    "ncbi_taxon_id":7719
+  },
+  "drer":{
+    "name":"Danio rerio",
+    "ncbi_taxon_id":7955
+  },
+  "dmel":{
+    "name":"Drosophila melanogaster",
+    "ncbi_taxon_id":7227
+  },
+  "ecab":{
+    "name":"Equus caballus",
+    "ncbi_taxon_id":9796
+  },
+  "ggal":{
+    "name":"Gallus gallus",
+    "ncbi_taxon_id":9031
+  },
+  "hrob":{
+    "name":"Helobdella robusta",
+    "ncbi_taxon_id":6412
+  },
+  "locu":{
+    "name":"Lepisosteus oculatus",
+    "ncbi_taxon_id":7918
+  },
+  "ldel":{
+    "name":"Leptotrombidium deliense UoL-UT",
+    "ncbi_taxon_id":859272
+  },
+  "lung":{
+    "name":"Lingula unguis",
+    "ncbi_taxon_id":7574
+  },
+  "lafr":{
+    "name":"Loxodonta africana",
+    "ncbi_taxon_id":9785
+  },
+  "mluc":{
+    "name":"Myotis lucifugus",
+    "ncbi_taxon_id":59463
+  },
+  "nvec":{
+    "name":"Nematostella vectensis",
+    "ncbi_taxon_id":45351
+  },
+  "oana":{
+    "name":"Ornithorhynchus anatinus",
+    "ncbi_taxon_id":9258
+  },
+  "olat":{
+    "name":"Oryzias latipes",
+    "ncbi_taxon_id":8090
+  },
+  "pmac":{
+    "name":"Papilio machaon",
+    "ncbi_taxon_id":76193
+  },
+  "phma":{
+    "name":"Physeter macrocephalus",
+    "ncbi_taxon_id":9755
+  },
+  "rvar":{
+    "name":"Ramazzottius varieornatus",
+    "ncbi_taxon_id":947166
+  },
+  "sman":{
+    "name":"Schistosoma mansoni",
+    "ncbi_taxon_id":6183
+  },
+  "spur":{
+    "name":"Strongylocentrotus purpuratus",
+    "ncbi_taxon_id":7668
+  },
+  "trub":{
+    "name":"Takifugu rubripes",
+    "ncbi_taxon_id":31033
+  },
+  "tnig":{
+    "name":"Tetraodon nigroviridis",
+    "ncbi_taxon_id":99883
+  },
+  "tcas":{
+    "name":"Tribolium castaneum",
+    "ncbi_taxon_id":7070
+  },
+  "tadh":{
+    "name":"Trichoplax adhaerens",
+    "ncbi_taxon_id":10228
+  },
+  "xtro":{
+    "name":"Xenopus tropicalis",
+    "ncbi_taxon_id":8364
+  },
+  "acid":{
+    "name":"Acidobacterium capsulatum",
+    "ncbi_taxon_id":33075
+  },
+  "aaeo":{
+    "name":"Aquifex aeolicus",
+    "ncbi_taxon_id":63363
+  },
+  "bthe":{
+    "name":"Bacteroides thetaiotaomicron",
+    "ncbi_taxon_id":818
+  },
+  "cthi":{
+    "name":"Caldimicrobium thiodismutans",
+    "ncbi_taxon_id":1653476
+  },
+  "cnit":{
+    "name":"Calditerrivibrio nitroreducens",
+    "ncbi_taxon_id":477976
+  },
+  "calk":{
+    "name":"Chitinivibrio alkaliphilus",
+    "ncbi_taxon_id":1505232
+  },
+  "ctra":{
+    "name":"Chlamydia trachomatis",
+    "ncbi_taxon_id":813
+  },
+  "ctep":{
+    "name":"Chlorobaculum tepidum",
+    "ncbi_taxon_id":1097
+  },
+  "chau":{
+    "name":"Chloroflexus aurantiacus",
+    "ncbi_taxon_id":1108
+  },
+  "deth":{
+    "name":"Dehalococcoides ethenogenes 195",
+    "ncbi_taxon_id":243164
+  },
+  "drad":{
+    "name":"Deinococcus radiodurans",
+    "ncbi_taxon_id":1299
+  },
+  "dind":{
+    "name":"Desulfurispirillum indicum",
+    "ncbi_taxon_id":936456
+  },
+  "dtur":{
+    "name":"Dictyoglomus turgidum",
+    "ncbi_taxon_id":513050
+  },
+  "fnuc":{
+    "name":"Fusobacterium nucleatum subsp. nucleatum",
+    "ncbi_taxon_id":76856
+  },
+  "gaur":{
+    "name":"Gemmatimonas aurantiaca",
+    "ncbi_taxon_id":173480
+  },
+  "gvio":{
+    "name":"Gloeobacter violaceus",
+    "ncbi_taxon_id":33072
+  },
+  "mtub":{
+    "name":"Mycobacterium tuberculosis",
+    "ncbi_taxon_id":1773
+  },
+  "mgen":{
+    "name":"Mycoplasma genitalium",
+    "ncbi_taxon_id":2097
+  },
+  "rbal":{
+    "name":"Rhodopirellula baltica",
+    "ncbi_taxon_id":265606
+  },
+  "scoe":{
+    "name":"Streptomyces coelicolor",
+    "ncbi_taxon_id":1902
+  },
+  "tter":{
+    "name":"Thermobaculum terrenum",
+    "ncbi_taxon_id":166501
+  },
+  "tyel":{
+    "name":"Thermodesulfovibrio yellowstonii",
+    "ncbi_taxon_id":28262
+  },
+  "ther":{
+    "name":"Thermotoga maritima",
+    "ncbi_taxon_id":2336
+  },
+  "tpal":{
+    "name":"Treponema pallidum subsp. pallidum str. Nichols",
+    "ncbi_taxon_id":243276
+  },
+  "verr":{
+    "name":"Verrucomicrobium sp. GAS474",
+    "ncbi_taxon_id":1882831
+  },
+  "acan":{
+    "name":"Albugo candida 2VRR",
+    "ncbi_taxon_id":911350
+  },
+  "alai":{
+    "name":"Albugo laibachii Nc14",
+    "ncbi_taxon_id":890382
+  },
+  "cowc":{
+    "name":"Capsaspora owczarzaki",
+    "ncbi_taxon_id":192875
+  },
+  "falb":{
+    "name":"Fonticula alba",
+    "ncbi_taxon_id":691883
+  },
+  "pirr":{
+    "name":"Globisporangium irregulare DAOM BR486",
+    "ncbi_taxon_id":1223557
+  },
+  "piwa":{
+    "name":"Globisporangium iwayamae DAOM BR242034",
+    "ncbi_taxon_id":1223558
+  },
+  "pult":{
+    "name":"Globisporangium ultimum DAOM BR144",
+    "ncbi_taxon_id":431595
+  },
+  "pulu":{
+    "name":"Globisporangium ultimum var. sporangiiferum BR650",
+    "ncbi_taxon_id":1223559
+  },
+  "hara":{
+    "name":"Hyaloperonospora arabidopsidis Emoy2",
+    "ncbi_taxon_id":559515
+  },
+  "mbre":{
+    "name":"Monosiga brevicollis",
+    "ncbi_taxon_id":81824
+  },
+  "nfoa":{
+    "name":"Naegleria fowleri strain ATCC 30894",
+    "ncbi_taxon_id":2301183
+  },
+  "ngru":{
+    "name":"Naegleria gruberi strain NEG-M",
+    "ncbi_taxon_id":744533
+  },
+  "pclt":{
+    "name":"Phytophthora capsici LT1534",
+    "ncbi_taxon_id":763924
+  },
+  "pinf":{
+    "name":"Phytophthora infestans T30-4",
+    "ncbi_taxon_id":403677
+  },
+  "psoj":{
+    "name":"Phytophthora sojae strain P6497",
+    "ncbi_taxon_id":1094619
+  },
+  "pvex":{
+    "name":"Phytopythium vexans DAOM BR484",
+    "ncbi_taxon_id":1223560
+  },
+  "paph":{
+    "name":"Pythium aphanidermatum DAOM BR444",
+    "ncbi_taxon_id":1223555
+  },
+  "parr":{
+    "name":"Pythium arrhenomanes ATCC 12531",
+    "ncbi_taxon_id":1223556
+  },
+  "sdic":{
+    "name":"Saprolegnia diclina VS20",
+    "ncbi_taxon_id":1156394
+  },
+  "spar":{
+    "name":"Saprolegnia parasitica CBS 223.65",
+    "ncbi_taxon_id":695850
+  },
+  "sarc":{
+    "name":"Sphaeroforma arctica JP610",
+    "ncbi_taxon_id":667725
+  },
+  "tpse":{
+    "name":"Thalassiosira pseudonana",
+    "ncbi_taxon_id":35128
+  },
+  "tvag":{
+    "name":"Trichomonas vaginalis G3",
+    "ncbi_taxon_id":412133
+  },
+  "atum":{
+    "name":"Agrobacterium tumefaciens str. C58",
+    "ncbi_taxon_id":176299
+  },
+  "bdia":{
+    "name":"Bradyrhizobium diazoefficiens",
+    "ncbi_taxon_id":1355477
+  },
+  "cjej":{
+    "name":"Campylobacter jejuni subsp. jejuni NCTC 11168",
+    "ncbi_taxon_id":192222
+  },
+  "cbur":{
+    "name":"Coxiella burnetii RSA 493",
+    "ncbi_taxon_id":227377
+  },
+  "ecol":{
+    "name":"Escherichia coli",
+    "ncbi_taxon_id":562
+  },
+  "ftul":{
+    "name":"Francisella tularensis subsp. tularensis SCHU S4",
+    "ncbi_taxon_id":177416
+  },
+  "gsul":{
+    "name":"Geobacter sulfurreducens",
+    "ncbi_taxon_id":35554
+  },
+  "hpyl":{
+    "name":"Helicobacter pylori",
+    "ncbi_taxon_id":210
+  },
+  "nmen":{
+    "name":"Neisseria meningitidis serogroup B",
+    "ncbi_taxon_id":491
+  },
+  "psae":{
+    "name":"Pseudomonas aeruginosa",
+    "ncbi_taxon_id":287
+  },
+  "rsol":{
+    "name":"Ralstonia solanacearum GMI1000",
+    "ncbi_taxon_id":267608
+  },
+  "rpro":{
+    "name":"Rickettsia prowazekii str. Madrid E",
+    "ncbi_taxon_id":272947
+  },
+  "vcho":{
+    "name":"Vibrio cholerae O1 biovar El Tor str. N16961",
+    "ncbi_taxon_id":243277
+  },
+  "wsuc":{
+    "name":"Wolinella succinogenes DSM 1740",
+    "ncbi_taxon_id":273121
+  },
+  "atha":{
+    "name":"Arabidopsis thaliana",
+    "ncbi_taxon_id":3702
+  },
+  "apro":{
+    "name":"Auxenochlorella protothecoides",
+    "ncbi_taxon_id":3075
+  },
+  "cbra":{
+    "name":"Chara braunii",
+    "ncbi_taxon_id":69332
+  },
+  "crei":{
+    "name":"Chlamydomonas reinhardtii",
+    "ncbi_taxon_id":3055
+  },
+  "cmer":{
+    "name":"Cyanidioschyzon merolae",
+    "ncbi_taxon_id":45157
+  },
+  "gthe":{
+    "name":"Guillardia theta",
+    "ncbi_taxon_id":55529
+  },
+  "knit":{
+    "name":"Klebsormidium nitens",
+    "ncbi_taxon_id":105231
+  },
+  "mcom":{
+    "name":"Micromonas commoda",
+    "ncbi_taxon_id":296587
+  },
+  "osat":{
+    "name":"Oryza sativa subsp. japonica",
+    "ncbi_taxon_id":39947
+  },
+  "ppat":{
+    "name":"Physcomitrium patens",
+    "ncbi_taxon_id":3218
+  },
+  "rcom":{
+    "name":"Ricinus communis",
+    "ncbi_taxon_id":3988
+  },
+  "vcar":{
+    "name":"Volvox carteri f. nagariensis",
+    "ncbi_taxon_id":3068
+  },
+  "zmay":{
+    "name":"Zea mays",
+    "ncbi_taxon_id":4577
+  }
+}
