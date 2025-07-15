@@ -84,6 +84,10 @@ class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
             if entry[1] == organism
         ]
 
+    @property
+    def entries(self):
+        return list(self._entries)
+
     def __contains__(self, organism: str) -> bool:
         return organism in self._organisms
 
