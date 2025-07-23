@@ -149,6 +149,20 @@ def _load_deflines():
         ORTHOMCL_DEFLINES_URL, "orthomcl/deflines.txt.gz")
 
 
+def _stream(
+    path: pathlib.Path | None,
+    default_stream: Callable[[], Generator[bytes, Any, None]]
+):
+    if path is None:
+        return default_stream()
+
+    def stream():
+        with path.open("rb") as f:
+            for line in f:
+                yield line
+    return stream()
+
+
 class _OrthoMCL(Mapping[str, OrthoEntry]):
     """Queryable OrthoMCL database.
 
@@ -169,22 +183,27 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
     [OrthoEntry(group='OG7_0009222', organism='lmex', gene_id='LmxM.20.1400')]
     ```
     """
-    def __init__(self):
+    def __init__(
+        self,
+        groups_path: pathlib.Path | None = None,
+        deflines_path: pathlib.Path | None = None,
+    ):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
         self._descriptions: dict[str, str] = {}
         self._organisms = OrthoOrganismCollection()
         self._initialised: bool = False
 
+        self.groups_path = groups_path
+        self.deflines_path = deflines_path
+
     def _initialise(self):
-        stream = _load_deflines()
-        for line in stream:
+        for line in _stream(self.deflines_path, _load_deflines):
             org_geneid, _, rest = line.split(maxsplit=2)
             description = rest[::-1].split(maxsplit=1)[1][::-1]
             self._descriptions[org_geneid[1:].decode()] = description.decode()
 
-        stream = _load_groups()
-        for line in stream:
+        for line in _stream(self.groups_path, _load_groups):
             self._add_group_from_line(line.decode())
 
         self._initialised = True
@@ -270,8 +289,30 @@ def cli():
         ),
         default=None,
     )
+    parser.add_argument(
+        "--group-path",
+        "-g",
+        type=pathlib.Path,
+        help=(
+            "Uses the given path as the orthology group database instead of "
+            "the OrthoMCL default."
+        ),
+        default=None,
+    )
+    parser.add_argument(
+        "--deflines-path",
+        "-d",
+        type=pathlib.Path,
+        help=(
+            "Uses the given path as the defline source of gene descriptions "
+            "instead of the OrthoMCL default."
+        ),
+        default=None,
+    )
 
     args = parser.parse_args()
+
+    OrthoMCL = _OrthoMCL(args.group_path, args.deflines_path)
 
     if args.organisms is not None:
         organisms: list[str] = [
