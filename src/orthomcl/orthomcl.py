@@ -192,8 +192,8 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
     """
     def __init__(
         self,
-        groups_path: pathlib.Path | None = None,
-        deflines_path: pathlib.Path | None = None,
+        groups_path: str | pathlib.Path | None = None,
+        deflines_path: str | pathlib.Path | None = None,
     ):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
@@ -201,8 +201,10 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         self._organisms = OrthoOrganismCollection()
         self._initialised: bool = False
 
-        self.groups_path = groups_path
-        self.deflines_path = deflines_path
+        self.groups_path = (
+            pathlib.Path(groups_path) if groups_path is not None else None)
+        self.deflines_path = (
+            pathlib.Path(deflines_path) if deflines_path is not None else None)
 
     def _initialise(self):
         for line in _stream(self.deflines_path, _load_deflines):
