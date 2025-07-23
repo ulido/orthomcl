@@ -3,8 +3,9 @@ import argparse
 from gzip import GzipFile
 import json
 import pathlib
-from typing import NamedTuple
-from collections.abc import Mapping
+import re
+from typing import Any, NamedTuple
+from collections.abc import Callable, Generator, Mapping
 
 import requests
 from tqdm.auto import tqdm
@@ -18,6 +19,12 @@ ORTHOMCL_GROUPS_URL = (
 ORTHOMCL_DEFLINES_URL = (
     ORTHOMCL_ROOT_URL +
     "deflines_OrthoMCL-7.txt.gz"
+)
+
+
+_TRANSCRIPT_ID_REGEX_PREFIX = re.compile(r"^(rna_|)")
+_TRANSCRIPT_ID_REGEX_SUFFIX = (
+    re.compile(r"([\.\-]1|)([\-\.]t[0-9]+|)([_\.]mRNA|)(_[0-9]|)(-RA|)(-p[0-9]+|)(-CDS[0-9]+|)$")  # noqa: E501
 )
 
 
@@ -64,7 +71,7 @@ class OrthoEntry(NamedTuple):
      - `description`: The entry's /gene's description.
     """
     group: str
-    organism: str
+    organism: str | None
     gene_id: str
     description: str
 
@@ -78,7 +85,7 @@ class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
             entry[1] for entry in self._entries
         }
 
-    def __getitem__(self, organism: str):
+    def __getitem__(self, organism: str | None):
         return [
             OrthoEntry(*entry) for entry in self._entries
             if entry[1] == organism
@@ -88,7 +95,7 @@ class OrthoEntryCollection(Mapping[str, list[OrthoEntry]]):
     def entries(self):
         return list(self._entries)
 
-    def __contains__(self, organism: str) -> bool:
+    def __contains__(self, organism: str | None) -> bool:
         return organism in self._organisms
 
     def __iter__(self):
@@ -221,9 +228,29 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
             self._entries[entry[2]] = entry
         self._groups[name] = group
 
+    def _normalise_gene_id(self, gene_id: str):
+        return _TRANSCRIPT_ID_REGEX_SUFFIX.sub(
+            "",
+            _TRANSCRIPT_ID_REGEX_PREFIX.sub("", gene_id)
+        )
+
     def _entry_from_string(self, group: str, string: str):
-        organism, gene_id = string.split("|")
-        description = self._descriptions[string]
+        splits = string.split("|")
+        if len(splits) == 2:
+            organism, gene_id = splits
+        elif len(splits) == 3:
+            _, gene_id, _ = splits
+            organism = None
+        else:
+            gene_id = string
+            organism = None
+
+        gene_id = self._normalise_gene_id(gene_id)
+
+        try:
+            description = self._descriptions[string]
+        except KeyError:
+            description = ""
         return OrthoEntry(group, organism, gene_id, description)
 
     def __getitem__(self, gene_id: str):
@@ -315,7 +342,7 @@ def cli():
     OrthoMCL = _OrthoMCL(args.group_path, args.deflines_path)
 
     if args.organisms is not None:
-        organisms: list[str] = [
+        organisms: list[str | None] = [
             organism.strip() for organism in args.organisms.split(",")]
     else:
         organisms = OrthoMCL.all_organisms()
