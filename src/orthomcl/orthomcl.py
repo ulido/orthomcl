@@ -121,20 +121,6 @@ def _download_file(url: str, path: pathlib.Path):
             outfile.write(chunk)
 
 
-def _download_groups(path: pathlib.Path):
-    """Downloads the OrthoMCL database's current release and stores it in
-    `path`.
-    """
-    _download_file(ORTHOMCL_GROUPS_URL, path)
-
-
-def _download_deflines(path: pathlib.Path):
-    """Downloads the OrthoMCL database's current deflines and stores it in
-    `path`.
-    """
-    _download_file(ORTHOMCL_DEFLINES_URL, path)
-
-
 def _load_gzipped_file(url: str, rel_path: str):
     """Loads or downloads a cached file and presents it as a line Generator."""
     path = (
