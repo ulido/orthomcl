@@ -156,20 +156,6 @@ def _load_deflines():
         ORTHOMCL_DEFLINES_URL, "orthomcl/deflines.txt.gz")
 
 
-def _stream(
-    path: pathlib.Path | None,
-    default_stream: Callable[[], Generator[bytes, Any, None]]
-):
-    if path is None:
-        return default_stream()
-
-    def stream():
-        with path.open("rb") as f:
-            for line in f:
-                yield line
-    return stream()
-
-
 class _OrthoMCL(Mapping[str, OrthoEntry]):
     """Queryable OrthoMCL database.
 
@@ -194,6 +180,7 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         self,
         groups_path: str | pathlib.Path | None = None,
         deflines_path: str | pathlib.Path | None = None,
+
     ):
         self._groups: dict[str, list[OrthoEntry]] = {}
         self._entries: dict[str, OrthoEntry] = {}
@@ -206,13 +193,27 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
         self.deflines_path = (
             pathlib.Path(deflines_path) if deflines_path is not None else None)
 
+    def _stream_txt_file(
+        self,
+        path: pathlib.Path | None,
+        default_stream: Callable[[], Generator[bytes, Any, None]]
+    ):
+        if path is None:
+            return default_stream()
+
+        def stream():
+            with path.open("rb") as f:
+                for line in f:
+                    yield line
+        return stream()
+
     def _initialise(self):
-        for line in _stream(self.deflines_path, _load_deflines):
+        for line in self._stream_txt_file(self.deflines_path, _load_deflines):
             org_geneid, _, rest = line.split(maxsplit=2)
             description = rest[::-1].split(maxsplit=1)[1][::-1]
             self._descriptions[org_geneid[1:].decode()] = description.decode()
 
-        for line in _stream(self.groups_path, _load_groups):
+        for line in self._stream_txt_file(self.groups_path, _load_groups):
             self._add_group_from_line(line.decode())
 
         self._initialised = True
@@ -294,7 +295,72 @@ class _OrthoMCL(Mapping[str, OrthoEntry]):
 
     def get_organism_info(self, organism: str):
         return self._organisms[organism]
-OrthoMCL = _OrthoMCL()  # noqa: E305
+
+
+class OrthoMCLTSV(_OrthoMCL):
+    def __init__(self, groups_path: str | pathlib.Path):
+        super().__init__(None, None)
+
+        self._tsv_path = pathlib.Path(groups_path)
+
+    def _initialise(self):
+        with self._tsv_path.open("r") as f:
+            header = next(f)
+            organisms = header.split("\t")[1:]
+
+            for line in f:
+                splits = line.strip().split("\t")
+                group = splits[0]
+                entries: list[OrthoEntry] = []
+                for organism, gene_ids in zip(organisms, splits[1:]):
+                    if not gene_ids:
+                        continue
+                    for gene_id in gene_ids.split(","):
+                        gene_id = self._normalise_gene_id(gene_id.strip())
+                        id_splits = gene_id.split("|")
+                        if len(id_splits) == 3:
+                            _, gene_id, _ = id_splits
+
+                        try:
+                            description = self._descriptions[gene_id]
+                        except KeyError:
+                            description = ""
+
+                        entries.append(
+                            OrthoEntry(group, organism, gene_id, description))
+                self._add_group(group, entries)
+
+        self._initialised = True
+
+    def _add_group_from_line(self, line: str):
+        name, remainder = line.split(":", maxsplit=1)
+        group: list[OrthoEntry] = [
+            self._entry_from_string(name, entry_string)
+            for entry_string in remainder[1:-1].split(" ")
+        ]
+        self._add_group(name, group)
+
+    def _entry_from_string(self, group: str, string: str):
+        splits = string.split("|")
+        if len(splits) == 2:
+            organism, gene_id = splits
+        elif len(splits) == 3:
+            _, gene_id, _ = splits
+            organism = None
+        else:
+            gene_id = string
+            organism = None
+
+        gene_id = self._normalise_gene_id(gene_id)
+
+        try:
+            description = self._descriptions[string]
+        except KeyError:
+            description = ""
+        return OrthoEntry(group, organism, gene_id, description)
+
+
+OrthoMCL = _OrthoMCL()
 
 
 def cli():
@@ -338,10 +404,22 @@ def cli():
         ),
         default=None,
     )
-
+    parser.add_argument(
+        "--tsv-group-path",
+        "-t",
+        type=pathlib.Path,
+        help=(
+            "Uses the given path as the TSV-formatted orthology group "
+            "database."
+        ),
+        default=None,
+    )
     args = parser.parse_args()
 
-    OrthoMCL = _OrthoMCL(args.group_path, args.deflines_path)
+    if args.tsv_group_path is None:
+        OrthoMCL = _OrthoMCL(args.group_path, args.deflines_path)
+    else:
+        OrthoMCL = OrthoMCLTSV(args.tsv_group_path)
 
     if args.organisms is not None:
         organisms: list[str | None] = [
