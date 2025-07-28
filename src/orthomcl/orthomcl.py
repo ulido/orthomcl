@@ -305,7 +305,7 @@ class OrthoMCLTSV(_OrthoMCL):
 
     def _initialise(self):
         with self._tsv_path.open("r") as f:
-            header = next(f)
+            header = next(f).strip()
             organisms = header.split("\t")[1:]
 
             for line in f:
